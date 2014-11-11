@@ -12,23 +12,87 @@
 
 </head>
 <body>
+<h3>Strings</h3>
+<caption>This page was constructed with the help of:
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank"> MDN:Sting.</a>
+</caption>
 
+<p>Type a string</p>
 <input id="takeUserString" type="text" name="userStr" placeholder="Type something for your string...">
+
 <button id="inpSubmit" type="submit" name="submitUserStrButton">Submit</button>
 
     <script>
         document.getElementById('inpSubmit').addEventListener('click', function() {
+
             var div = document.createElement('div');
-            var usrStr = document.getElementById('takeUserString');
+
+            // how to write this variable containing initial string so I can manipulate string throughout???
+            var usrStr = document.getElementById('takeUserString').value;
+
             div.innerHTML =  usrStr;
 
-            console.log('Appending user String to page body ' + usrStr.value);
+            // Confirm string
+            console.log('Appending user String to page body ' + usrStr);
+
+            // Display the new user's string as a div on the page
             document.body.appendChild(div);
 
-
         });
-
     </script>
+
+<h3>Playing with Strings</h3>
+<p>
+    Now I want to use the string object's attributes and properties to get to know The String better.
+    Select from the following methods of the string property prototype:
+<ul>
+    <li>toUpperCase()</li>
+    <li>toLowerCase()</li>
+    <li>quote()</li>
+    <li>fontcolor("red")</li>
+</ul>
+</p>
+
+<input id="firstStringChange" type="text" name="stringChange1" placeholder="Enter command here...">
+<button id="inpSubmitChange1" type="submit" name="submitStringChange1">Submit String Change</button>
+
+<script>
+    document.getElementById('inpSubmitChange1').addEventListener('click', function () {
+
+        var div = document.createElement('div');
+        var usrStr = document.getElementById('takeUserString').value;
+        var strChange = document.getElementById('firstStringChange').value;
+        var newString;
+        console.log('you selected: ' + strChange);
+
+        if(strChange === null) {
+            console.log('user did not enter a string change before submitting.');
+        } else {
+            var letter3 = strChange.charAt(2);
+            if(letter3==='U') {
+                newString = usrStr.toUpperCase();
+            } else if(letter3 === 'L') {
+                newString = usrStr.toLowerCase();
+            } else if(letter3 === 'o') {
+                newString = usrStr.quote();
+            } else if(letter3 === 'n') {
+                newString = usrStr.fontcolor("red");
+            } else {
+                console.log(strChange + ' not recognized. Try again');
+            }
+        }
+
+        console.log('This is the new string: ' + newString + 'and the new str value: ' + newString.value);
+
+        newString = newString.value;
+        div.innerHTML = newString;
+
+        console.log('Appending new string changed by user to body: ' + newString);
+
+        document.body.appendChild(div);
+    });
+</script>
+
 
 
 </body>
