@@ -48,6 +48,82 @@
         console.log(obj.name);
         console.log(obj['first name']); // object is an associative array
 
+        console.log('**********************');
+        var obj_names = {
+            name1: 'Jacob',
+            name2: 'Phani'
+        };
+        var arr_names = ['Jacob', 'Phani', 'Chris'];
+        console.log(arr_names[1]);
+        console.log(obj_names['name1']);
+
+        // Objects using a constructor
+
+        Person.users = [];
+        function Person(name) {
+           this.name = name;
+           Person.users.push(this);
+        }
+
+
+
+        var christina = new Person('Chris');
+
+        console.log(christina);
+
+        // Object.create()
+
+        var parent = {
+            name: 'Repala',
+            prototype: 10
+        };
+
+        var child = Object.create(parent);
+
+        console.log(child.name); // 'Repala'
+        parent.name = 'Chris';
+        console.log(child.name); // 'Chris'
+        child.id = 64;
+        console.log(parent.id); // undefined
+
+        // attributes - metadata about the object
+        // prototype, extensible, class name
+
+        console.log(Object.getPrototypeOf(child) === parent); // print the prototype of child
+
+
+        /*
+        *
+        *
+        * repala
+        *
+        * attributes
+        * prototype: Person.prototype
+        *
+        * properties
+        * name: 'Repala'
+        *
+        *
+        * */
+
+
+        Person.prototype.data = '10';
+
+
+        var repala = new Person('Repala');
+        repala.data = 11;
+        console.log(repala.hasOwnProperty('data')); // true
+        console.log('repala.data = ' + repala.data);
+        var jacob = new Person('Jacob');
+        console.log('jacob.data = ' + jacob.data);
+
+        console.log(child.hasOwnProperty('address'));
+
+        console.log(Person.users);
+
+
+
+
     </script>
 </head>
 <body>

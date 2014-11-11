@@ -5,11 +5,38 @@
     <title></title>
 </head>
 <body>
-<form action="" method="" name="contact_details">
-    <input type="text" name="name"/>
-    <input type="text" name="email"/>
-    <input type="text" name="address"/>
-    <input type="submit" value="Create Contact"/>
+<form action="" method="get" name="contact_details">
+    <input type="text" name="name" placeholder="enter name ... "/>
+    <input type="text" name="email" placeholder="email"/>
+    <input type="text" name="address" placeholder="address here ... "/>
+    <input id="inp_submit" type="submit" value="Create Contact"/>
 </form>
+<script>
+    document.getElementById('inp_submit').addEventListener('click', function () {
+        console.log('Hello World!');
+
+
+
+        var form = document.forms.contact_details;
+
+        var contact = {
+            name: form.name.value,
+            email: form.email.value,
+            address: form.address.value,
+            sayHello: function () {
+                console.log('Hello from ' + this.name);
+            }
+        };
+
+        contact.sayHello();
+
+
+
+
+    });
+    document.forms.contact_details.addEventListener('submit', function (event) {
+        event.preventDefault();
+    });
+</script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        var obj = {
+            id: 10, // attributes - writable, enumerable, configurable, value,
+            name: 'Ray',
+            address: '121 W Washington Ave'
+        };
+
+        Object.prototype.identifier = 'gotcha';
+
+        console.log(obj.toString());
+
+        // Object.prototype
+
+        console.log(Object.getPrototypeOf(obj));
+
+        // attributes of properties
+        //
+
+        console.log(Object.getOwnPropertyDescriptor(Object.prototype, 'toString'));
+        console.log(Object.getOwnPropertyDescriptor(obj, 'id'));
+
+        console.log('***************');
+        for ( var prop in obj ) { // enumeration
+            console.log(prop);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
