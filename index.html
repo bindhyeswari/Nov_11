@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+    </script>
+    <style>
+        div {
+            width: 30%;
+            background-color: #eee;
+            padding: 1em;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="http://www.google.com" target="_blank">Google</a>
+    <div><input type="text"/></div>
+    <a href="#" id="a_change_color">Change the background color of Section 1</a>
+    <ul>
+        <li><a href="#section1">Go To Section 1</a></li>
+        <li><a href="#section2">Go To Section 2</a></li>
+    </ul>
+    <div id="section1">
+        <h1>Section 1</h1>
+        Lorem ipsum dolor sit amet, aliquid augue donec id, augue odio aenean mi est nulla. Ipsum aliquam erat facilisis duis et elit. Neque suscipit, vitae ut phasellus, eget rhoncus nascetur per blandit sed, nunc nam, posuere consequat felis. Nam viverra lectus dolor tempor consequat vulputate, interdum ac sodales urna neque et nec, in sem et suscipit. Pellentesque eu, dictum elementum pellentesque sit velit posuere urna. Aliquip lorem duis aliquet, nec elit, fermentum at odio sed nec vestibulum. At vitae dolor sed dui et. Commodo vestibulum dignissim, ac dolor morbi primis, non quis eu est, erat integer aenean augue sapien. Sit faucibus dictumst, vestibulum ut viverra laoreet donec volutpat, mauris enim sed aliquam porttitor morbi.
+        Lorem ipsum dolor sit amet, aliquid augue donec id, augue odio aenean mi est nulla. Ipsum aliquam erat facilisis duis et elit. Neque suscipit, vitae ut phasellus, eget rhoncus nascetur per blandit sed, nunc nam, posuere consequat felis. Nam viverra lectus dolor tempor consequat vulputate, interdum ac sodales urna neque et nec, in sem et suscipit. Pellentesque eu, dictum elementum pellentesque sit velit posuere urna. Aliquip lorem duis aliquet, nec elit, fermentum at odio sed nec vestibulum. At vitae dolor sed dui et. Commodo vestibulum dignissim, ac dolor morbi primis, non quis eu est, erat integer aenean augue sapien. Sit faucibus dictumst, vestibulum ut viverra laoreet donec volutpat, mauris enim sed aliquam porttitor morbi.
+    </div>
+
+    <div id="section2">
+        <h1>Section 2</h1>
+        Lorem ipsum dolor sit amet, aliquid augue donec id, augue odio aenean mi est nulla. Ipsum aliquam erat facilisis duis et elit. Neque suscipit, vitae ut phasellus, eget rhoncus nascetur per blandit sed, nunc nam, posuere consequat felis. Nam viverra lectus dolor tempor consequat vulputate, interdum ac sodales urna neque et nec, in sem et suscipit. Pellentesque eu, dictum elementum pellentesque sit velit posuere urna. Aliquip lorem duis aliquet, nec elit, fermentum at odio sed nec vestibulum. At vitae dolor sed dui et. Commodo vestibulum dignissim, ac dolor morbi primis, non quis eu est, erat integer aenean augue sapien. Sit faucibus dictumst, vestibulum ut viverra laoreet donec volutpat, mauris enim sed aliquam porttitor morbi.
+        Lorem ipsum dolor sit amet, aliquid augue donec id, augue odio aenean mi est nulla. Ipsum aliquam erat facilisis duis et elit. Neque suscipit, vitae ut phasellus, eget rhoncus nascetur per blandit sed, nunc nam, posuere consequat felis. Nam viverra lectus dolor tempor consequat vulputate, interdum ac sodales urna neque et nec, in sem et suscipit. Pellentesque eu, dictum elementum pellentesque sit velit posuere urna. Aliquip lorem duis aliquet, nec elit, fermentum at odio sed nec vestibulum. At vitae dolor sed dui et. Commodo vestibulum dignissim, ac dolor morbi primis, non quis eu est, erat integer aenean augue sapien. Sit faucibus dictumst, vestibulum ut viverra laoreet donec volutpat, mauris enim sed aliquam porttitor morbi.
+    </div>
+    <script>
+
+
+
+        var a = document.getElementById('a_change_color');
+        a.addEventListener('click', function () {
+            console.log('Hyperlink clicked ... ');
+            var div = document.getElementById('section1');
+            div.style.backgroundColor = 'red';
+            // todo: toggle the color red and gray
+        });
+
+
+    </script>
+</body>
+</html>
