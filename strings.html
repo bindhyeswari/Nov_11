@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Practice with strings</title>
+
+    <script>
+
+        var myStr = 'This is my string';
+
+    </script>
+
+</head>
+<body>
+
+<input id="takeUserString" type="text" name="userStr" placeholder="Type something for your string...">
+<button id="inpSubmit" type="submit" name="submitUserStrButton">Submit</button>
+
+    <script>
+        document.getElementById('inpSubmit').addEventListener('click', function() {
+            var div = document.createElement('div');
+            var usrStr = document.getElementById('takeUserString');
+            div.innerHTML =  usrStr;
+
+            console.log('Appending user String to page body ' + usrStr.value);
+            document.body.appendChild(div);
+
+
+        });
+
+    </script>
+
+
+</body>
+</html>
