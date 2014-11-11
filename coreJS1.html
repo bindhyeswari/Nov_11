@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // Datatypes
+
+        // string, number, boolean, null, undefined | object
+
+        var p = {
+            name: 'Repala'
+        };
+        var q = {
+            name: 'Jacob'
+        };
+
+        console.log(p.name);
+
+        var a = 'Repala';
+        var b = 'Jacob';
+
+        // Primitives are passed by value
+        // Objects are passed by reference
+
+        function swap(x, y) {
+            var temp = y;
+            y = x;
+            x = temp;
+        }
+
+        swap(a, b);
+
+        console.log(a);
+
+        // Objects in Javascript
+        // Object literal
+        var obj = {
+            name: 'Jacob',
+            id: 32,
+            address: {
+                city: 'Sunnyvale'
+            },
+            'first name': 'Jacob'
+        };
+
+        console.log(obj.name);
+        console.log(obj['first name']); // object is an associative array
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
