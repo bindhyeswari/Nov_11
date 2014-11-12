@@ -180,3 +180,45 @@
     });
 
 </script>
+
+<h3>String Concatination</h3>
+<p>Now we are going to concatinate two strings.  Enter the two strings you wish to concatinate below.</p>
+
+<input id="conStr1" type="text" placeholder="string 1....">
+<button id="inpConStr1" type="submit">Submit String 1</button>
+
+<input id="conStr2" type="text" placeholder="string 2...">
+<button id=inpConStr2" type="submit">Submit String 2</button>
+
+<script>
+
+    var confirmClick1 = false;
+    var confirmClick2 = false;
+    var str1;
+    var str2;
+    var consStr;
+
+    document.getElementById('inpConStr1').addEventListener('click', function() {
+        str1 = document.getElementById('conStr1').value;
+        console.log('string 1: '+ str1);
+        confirmClick1 = true;
+    })
+
+    document.getElementById('inpConStr2').addEventListener('click', function() {
+        str2 = document.getElementById('conStr2').value;
+        console.log('string 2: '+ str2);
+        confirmClick2 = true;
+
+        if( confirmClick1 && confirmClick2) {
+            consStr = consStr.concat(str1, str2);
+            console.log('this is the new String: ' + consStr);
+        } else {
+        console.log('What?');
+        }
+
+    })
+
+</script>
+
+</body>
+</html>
