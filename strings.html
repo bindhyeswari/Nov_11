@@ -6,9 +6,32 @@
 
     <script>
 
-        var myStr = 'This is my string';
-
     </script>
+
+<style>
+
+    a {
+        backgroud-color: #59249d;
+    }
+
+    a:hover {
+        background-color: #8f39f8;
+        cursor: pointer;
+    }
+
+/*    div.stringHider {
+        display: none;
+        background-color: #eee;
+        margin: 0 auto;o
+    }
+
+    div.stringHider:hover {
+        display: inline-block;
+    }
+
+    */
+</style>
+
 
 </head>
 <body>
@@ -23,6 +46,7 @@
 <button id="inpSubmit" type="submit" name="submitUserStrButton">Submit</button>
 
     <script>
+
         document.getElementById('inpSubmit').addEventListener('click', function() {
 
             var div = document.createElement('div');
@@ -50,7 +74,11 @@
     <li>toLowerCase()</li>
     <li>quote()</li>
     <li>fontcolor("red")</li>
+    <li>bold()</li>
+    <li>strike()</li>
+    <li>italics()</li>
 </ul>
+
 </p>
 
 <input id="firstStringChange" type="text" name="stringChange1" placeholder="Enter command here...">
@@ -60,7 +88,10 @@
     document.getElementById('inpSubmitChange1').addEventListener('click', function () {
 
         var div = document.createElement('div');
+
+        // original user string
         var usrStr = document.getElementById('takeUserString').value;
+
         var strChange = document.getElementById('firstStringChange').value;
         var newString;
         console.log('you selected: ' + strChange);
@@ -77,6 +108,12 @@
                 newString = usrStr.quote();
             } else if(letter3 === 'n') {
                 newString = usrStr.fontcolor("red");
+            } else if(letter3 === 'l') {
+                newString = usrStr.bold();
+            } else if(letter3 === 'r') {
+                newString = usrStr.strike();
+            } else if(letter3 === 'a') {
+                newString = usrStr.italics();
             } else {
                 console.log(strChange + ' not recognized. Try again');
             }
@@ -90,10 +127,56 @@
         console.log('Appending new string changed by user to body: ' + newString);
 
         document.body.appendChild(div);
+
+
+        // WHY is this script not appending as it should?
+        // WHY is this script getting the value of rr?
     });
+
+    </script>
+
+<h3>Strings in Pieces</h3>
+<p> Lets play with strings and numbers.</p>
+<p>Pick a single digit number.</p>
+
+<input id="userNumber" type="text" maxlength=1 name="inpNum" placeholder="Number from 0-9 ...">
+<button id="inpSubmitNum" type="submit" name="submitNumButton">Submit Number</button>
+<script>
+    document.getElementById('inpSubmitNum').addEventListener('click', function() {
+        var div = document.createElement('div');
+
+        var yourNumber = document.getElementById('userNumber').value;
+        console.log('You have entered the number: ' + yourNumber);
+
+        div.innerHTML = yourNumber;
+        document.body.appendChild(div);
+    });
+
+
+    // WHY does this script add the div below the string button and not its own????
 </script>
 
 
+<p>Also, let's pick a new string</p>
+<input id="secondString" type="text" maxlength=10 name="secUserString" placeholder="String <=10 characters...">
+<button id="inpSecStrSubmit" type="submit" name="submitSecStringButton">Submit new String</button>
 
-</body>
-</html>
+<script class="hoverScript" id="charAtHoverScript">
+
+    document.getElementById('inpSecStrSubmit').addEventListener('click', function () {
+        var div = document.createElement('div');
+
+        var num = document.getElementById('userNumber').value;
+        console.log('number: ' + num);
+
+        var str2 =  document.getElementById('secondString').value;
+        console.log('string: ' + str2);
+
+        var str3 = str2.charAt(num);
+        console.log('char at the ' + num + 'th position: ' + str3);
+
+        div.innerHTML = str3;
+        document.body.appendChild(div)
+    });
+
+</script>
