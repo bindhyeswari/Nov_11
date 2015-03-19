@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        var obj = {
+            id: 32,
+            name: 'Mansi'
+        };
+
+        console.log(obj.id);
+
+        // Dot vs Associative Array Notation
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('input').addEventListener('change', function () {
+                var property = this.value;
+                console.log(obj[property]); // When you have a need for dynamic property access
+            });
+        });
+
+    </script>
+</head>
+<body>
+<input type="text" placeholder="Type in the property that you want to access ... "/>
+</body>
+</html>

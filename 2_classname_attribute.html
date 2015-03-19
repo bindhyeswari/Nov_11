@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        var obj = {};
+
+        console.log(obj.toString());
+
+        console.log(Object.prototype.toString.call(obj));
+
+
+        var regex = new RegExp('\d', 'gmi');
+
+        console.log(regex.toString());
+
+        console.log(RegExp.prototype.toString.call(regex));
+        console.log(Object.prototype.toString.call(regex));
+
+        function getClassNameAttribute(obj) {
+            return /\[object ([a-zA-Z]+)]/gmi.exec(Object.prototype.toString.call(obj))[1]
+        }
+
+        console.log(getClassNameAttribute(regex));
+        var date = new Date();
+        console.log(getClassNameAttribute(date));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

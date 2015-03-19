@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var customer = {
+            id: 272356158,
+            phone: "(408)431-1295",
+            email: "customer@mailinator.com", // string data type
+            address: { // object data type
+                city: "Sunnyvale",
+                zip: "95129" // should zip codes be numeric?
+            },
+            "custom field": "...notes on customer..." //notice the space in the property name
+        };
+        console.log(customer.id);
+        console.log(customer.address.city);
+        console.log(customer['id'])
+
+        var obj = { name: 'Ray Hengst', id: 32 };
+
+        var arr = [];
+        for (var prop in obj) {
+            arr.push(encodeURIComponent(prop) + '=' + encodeURIComponent(obj[prop]))
+        }
+        console.log(arr.join('&'));
+
+    </script>
+</head>
+<body>
+
+<input type="file" id="inp_file"/>
+<script>
+    var inp = document.getElementById('inp_file');
+    inp.addEventListener('change', function (event) {
+        console.log(this.files);
+
+        var file = this.files[0];
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/uploadfile');
+        xhr.setRequestHeader('accept', 'application/json');
+        xhr.setRequestHeader('Content-Type', file.type);
+        xhr.addEventListener('readystatechange', function () {
+            if( xhr.readyState === 4 && xhr.status === 200 ) {
+                var obj = JSON.parse(xhr.responseText);
+                console.log(obj);
+            }
+        });
+        xhr.send(file);
+    })
+</script>
+</body>
+</html>

@@ -5,6 +5,34 @@
     <title></title>
     <script>
 
+        var parent = {
+            id: 32
+        };
+
+        var child = Object_createES3(parent); // = your method here;
+
+        function Object_createES3(p) { // Douglas Crockford
+            // return child object
+
+            function DummyConstructor () {}
+            DummyConstructor.prototype = p;
+            var obj = new DummyConstructor();
+
+            // parent of obj is DummyConstructor.prototype
+            // DummyConstructor.prototype = p
+            // x = 10
+
+            return obj;
+
+
+        }
+
+        console.log(child.id); // should print 32
+        parent.id = 64;
+        console.log(child.id); // should print 64
+        child.name = 'Repala';
+        console.log(parent.name); // should print undefined
+
     </script>
 </head>
 <body>
